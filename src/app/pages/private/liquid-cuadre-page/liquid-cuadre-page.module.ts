@@ -7,6 +7,11 @@ import { LiquidCuadreModule } from "src/app/core/components/liquid-cuadre/liquid
 
 @NgModule({
   declarations: [LiquidCuadrePageComponent],
-  imports: [CommonModule, ThemeModule, LiquidCuadrePageRoutingModule, LiquidCuadreModule],
+  imports: [
+    CommonModule,
+    ThemeModule,
+    LiquidCuadrePageRoutingModule,
+    LiquidCuadreModule,
+  ],
 })
 export class LiquidCuadrePageModule {}

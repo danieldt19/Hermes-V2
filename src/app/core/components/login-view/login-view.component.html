@@ -33,7 +33,7 @@
   <ng-template pTemplate="footer">
     <p-button
       label="Limpiar"
-      icon="pi pi-times"
+      icon="fa fa-solid fa-hand-sparkles"
       (onClick)="resetForm()"
       styleClass="secundary-button p-button"
     ></p-button>
@@ -46,3 +46,6 @@
     ></p-button>
   </ng-template>
 </p-card>
+
+<p-confirmDialog [style]="{ width: '25em' }"></p-confirmDialog>
+<p-toast position="bottom-center"></p-toast>
