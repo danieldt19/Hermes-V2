@@ -1,0 +1,95 @@
+<p-card
+  header="Generar cuadre de líquidos"
+  subheader="Introduzca los datos que se solicitan para generar el cuadre de líquidos"
+  styleClass="main-card"
+>
+  <form [formGroup]="form">
+    <div class="grid formgrid p-fluid">
+      <div class="col-6 field">
+        <label label for="month" class="block">Mes</label>
+        <input
+          type="number"
+          placeholder="Introduce el mes"
+          formControlName="month"
+          pInputText
+        />
+        <small
+          class="p-error block"
+          *ngIf="
+            form.controls.month.errors?.required && form.controls.month.touched
+          "
+          >El mes es obligatorio</small
+        >
+        <small
+          class="p-error block"
+          *ngIf="
+            form.controls.month.invalid &&
+            form.controls.month.touched &&
+            !form.controls.month.errors?.required
+          "
+          >Debe tener un rango del 1 al 12</small
+        >
+      </div>
+      <div class="col-6 field">
+        <label label for="year" class="block">Año</label>
+        <input
+          pInputText
+          id="year"
+          type="number"
+          aria-describedby="year-help"
+          placeholder="Introduce el año"
+          formControlName="year"
+        />
+        <small
+          class="p-error block"
+          *ngIf="
+            form.controls.year.errors?.required && form.controls.year.touched
+          "
+          >El año es obligatorio</small
+        >
+        <small
+          class="p-error block"
+          *ngIf="
+            form.controls.year.invalid &&
+            form.controls.year.touched &&
+            !form.controls.year.errors?.required
+          "
+          >Debe tener un formato de año correcto</small
+        >
+      </div>
+      <div class="col-3 mt-2" *ngFor="let option of options">
+        <p-radioButton
+          [inputId]="option.key"
+          [value]="option"
+          formControlName="category"
+        ></p-radioButton>
+        <label [for]="option.key" class="ml-2">{{ option.name }}</label>
+      </div>
+    </div>
+    <p
+      *ngIf="form.get('month').invalid || form.get('year').invalid"
+      id="required_msg"
+    >
+      ¡Es obligatorio rellenar todos los campos y con un formato correcto!
+    </p>
+  </form>
+
+  <ng-template pTemplate="footer">
+    <p-button
+      label="Limpiar"
+      icon="fa fa-solid fa-hand-sparkles"
+      (onClick)="resetForm()"
+      styleClass="secundary-button p-button"
+    ></p-button>
+    <p-button
+      label="Generar"
+      icon="fa fa-solid fa-circle-check"
+      styleClass="primary-button p-button"
+      [disabled]="!form.valid"
+      (onClick)="onSubmit()"
+    ></p-button>
+  </ng-template>
+</p-card>
+
+<p-confirmDialog [style]="{ width: '25em' }"></p-confirmDialog>
+<p-toast position="bottom-center"></p-toast>

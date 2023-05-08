@@ -16,6 +16,13 @@ const routes: Routes = [
         (m) => m.ProfilePageModule
       ),
   },
+  {
+    path: "cuadre-liquidos",
+    loadChildren: () =>
+      import("./pages/private/liquid-cuadre-page/liquid-cuadre-page.module").then(
+        (m) => m.LiquidCuadrePageModule
+      ),
+  },
   { path: "**", redirectTo: "inicio" },
 ];
 

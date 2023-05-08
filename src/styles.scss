@@ -71,3 +71,27 @@
   }
 }
 
+/*
+Radio button
+*/
+.p-radiobutton .p-radiobutton-box {
+  border: 2px solid #40AAF5;
+  background: #ffffff;
+  width: 22px;
+  height: 22px;
+  color: #495057;
+  border-radius: 50%;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.p-inputtext {
+  margin: 0;
+  border: 2px solid #40AAF5;
+}
+
+.field > label {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  color: #40AAF5;
+  font-weight: bold;
+}
