@@ -19,6 +19,7 @@ import { ConfirmationService } from "primeng/api";
 import { AppComponent } from "./app.component";
 import { PanelMenuModule } from "./core/components/panel-menu/panel-menu.module";
 import { RouterModule } from "@angular/router";
+import { AppRoutingModule } from "./app-routing.module";
 
 @NgModule({
   declarations: [AppComponent],
@@ -40,6 +41,7 @@ import { RouterModule } from "@angular/router";
     ButtonModule,
     PanelMenuModule,
     RouterModule,
+    AppRoutingModule,
   ],
   providers: [ConfirmationService],
   bootstrap: [AppComponent],
