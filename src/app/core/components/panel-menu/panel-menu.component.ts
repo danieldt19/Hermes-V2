@@ -52,6 +52,7 @@ export class PanelMenuComponent implements OnInit {
       {
         label: "Cuadre líquidos",
         icon: "pi pi-chart-bar",
+        routerLink: '/cuadre-liquidos'
       },
       {
         label: "Documentos subidos",

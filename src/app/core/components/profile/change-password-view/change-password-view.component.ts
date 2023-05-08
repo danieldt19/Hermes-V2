@@ -11,9 +11,6 @@ import { ConfirmationService, MessageService } from "primeng/api";
 })
 export class ChangePasswordViewComponent {
 
-  /*public name = "Daniel Domínguez tejada";
-  public username = "daniel.dominguez";*/
-
   public form: FormGroup;
 
   @Output() backToProfileView = new EventEmitter();
