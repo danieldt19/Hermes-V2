@@ -1,0 +1,45 @@
+<p-card
+  header="Mi perfil"
+  subheader="Información sobre el perfil"
+  styleClass="main-card"
+>
+  <form [formGroup]="form">
+    <div class="p-inputgroup field">
+      <span class="p-inputgroup-addon">
+        <i class="fa fa-solid fa-user"></i>
+      </span>
+      <input pInputText placeholder="Nombre completo" formControlName="name" />
+    </div>
+    <div class="p-inputgroup field">
+      <span class="p-inputgroup-addon">
+        <i class="fa fa-solid fa-user-secret"></i>
+      </span>
+      <input pInputText placeholder="Nombre de usuario" formControlName="username" />
+    </div>
+    <p
+      *ngIf="form.get('name').invalid || form.get('username').invalid"
+      id="required_msg"
+    >
+      ¡Es obligatorio rellenar todos los campos!
+    </p>
+  </form>
+
+  <ng-template pTemplate="footer">
+    <p-button
+      label="Cambiar contraseña"
+      icon="fa-solid fa-key"
+      (onClick)="changePassword()"
+      styleClass="secundary-button p-button"
+    ></p-button>
+    <p-button
+      label="Actualizar"
+      icon="fa fa-solid fa-pen-fancy"
+      styleClass="primary-button p-button"
+      [disabled]="!form.valid"
+      (onClick)="onSubmit()"
+    ></p-button>
+  </ng-template>
+</p-card>
+
+<p-confirmDialog [style]="{ width: '25em' }"></p-confirmDialog>
+<p-toast position="bottom-center"></p-toast>

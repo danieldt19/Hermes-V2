@@ -1,0 +1,73 @@
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+@import '~@fortawesome/fontawesome-free/css/all.css';
+
+
+/* You can add global styles to this file, and also import other style files */
+
+/**BOTONES**/
+.primary-button.p-button {
+  background: #40AAF5;
+  color: white;
+  border: 1px solid #40AAF5;
+}
+
+.secundary-button.p-button {
+  margin-right: 1em;
+  background: gray;
+  color: white;
+  border: 1px solid gray;
+}
+
+/**INPUT GROUP*/
+.primary-inputgroup.p-inputgroup {
+  .p-inputgroup-addon {
+    background: #40AAF5;
+  }
+}
+//border-radius: 8px;
+//border: 2px solid green;
+
+/**CARDS*/
+.main-card.p-card {
+  border-radius: 8px;
+  border: 2px solid #40AAF5;
+  .p-card-title {
+    color: #40AAF5;
+  }
+  .p-card-header {
+    text-align: center;
+  }
+  .p-card-footer {
+    text-align: end;
+  }
+}
+
+/*PANEL MENU*/
+.main-panel.p-panelmenu {
+  .p-menuitem-text {
+    color: black;
+  }
+  .p-panelmenu-header > a .p-menuitem-icon {
+    margin-right: 0.5rem;
+    //color: blue;
+    font-weight: bold;
+  }
+  .p-panelmenu-content .p-menuitem .p-menuitem-link {
+    .p-menuitem-text {
+      color: black;
+      font-weight: bold;
+    }
+    .p-menuitem-icon {
+      //color: blue;
+      font-weight: bold;
+      margin-right: 0.5rem;
+    }
+  }
+  .p-panelmenu-header > a {
+    border: 3px solid #40AAF5;
+    border-radius: 5px;
+  }
+}
+
