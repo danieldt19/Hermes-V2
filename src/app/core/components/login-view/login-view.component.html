@@ -1,0 +1,48 @@
+<p-card
+  header="Iniciar sesión"
+  subheader="Inserte sus credenciales"
+  styleClass="main-card"
+>
+  <ng-template pTemplate="header">
+    <img
+      alt="Card"
+      src="https://st4.depositphotos.com/11574170/25191/v/600/depositphotos_251916955-stock-illustration-user-glyph-color-icon.jpg"
+    />
+  </ng-template>
+  <form [formGroup]="form">
+    <div class="p-inputgroup field">
+      <span class="p-inputgroup-addon">
+        <i class="pi pi-user"></i>
+      </span>
+      <input pInputText placeholder="Usuario" formControlName="username" />
+    </div>
+    <div class="p-inputgroup field">
+      <span class="p-inputgroup-addon">
+        <i class="pi pi-key"></i>
+      </span>
+      <input pInputText placeholder="Contraseña" formControlName="password" />
+    </div>
+    <p
+      *ngIf="form.get('username').invalid || form.get('password').invalid"
+      id="required_msg"
+    >
+      ¡Es obligatorio rellenar todos los campos!
+    </p>
+  </form>
+
+  <ng-template pTemplate="footer">
+    <p-button
+      label="Limpiar"
+      icon="pi pi-times"
+      (onClick)="resetForm()"
+      styleClass="secundary-button p-button"
+    ></p-button>
+    <p-button
+      label="Ingresar"
+      icon="pi pi-check"
+      styleClass="primary-button p-button"
+      [disabled]="!form.valid"
+      (onClick)="onSubmit()"
+    ></p-button>
+  </ng-template>
+</p-card>
