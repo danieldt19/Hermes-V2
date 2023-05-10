@@ -20,6 +20,7 @@ import { AppComponent } from "./app.component";
 import { PanelMenuModule } from "./core/components/panel-menu/panel-menu.module";
 import { RouterModule } from "@angular/router";
 import { AppRoutingModule } from "./app-routing.module";
+import { ThemeModule } from "./core/theme/theme.module";
 
 @NgModule({
   declarations: [AppComponent],
@@ -42,6 +43,7 @@ import { AppRoutingModule } from "./app-routing.module";
     PanelMenuModule,
     RouterModule,
     AppRoutingModule,
+    ThemeModule
   ],
   providers: [ConfirmationService],
   bootstrap: [AppComponent],
