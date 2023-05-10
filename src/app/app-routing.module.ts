@@ -23,6 +23,13 @@ const routes: Routes = [
         (m) => m.LiquidCuadrePageModule
       ),
   },
+  {
+    path: "documentos-subidos",
+    loadChildren: () =>
+      import("./pages/private/uploaded-documents-page/uploaded-documents-page.module").then(
+        (m) => m.UploadedDocumentsPageModule
+      ),
+  },
   { path: "**", redirectTo: "inicio" },
 ];
 
